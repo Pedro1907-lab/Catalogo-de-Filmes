@@ -2,11 +2,6 @@ const API_URL = "http://localhost:3000/filmes";
 
 let filmes = [];
 
-
-// ==========================================
-// READ - BUSCAR FILMES
-// ==========================================
-
 async function carregarFilmes() {
 
     try {
@@ -35,9 +30,6 @@ async function carregarFilmes() {
 }
 
 
-// ==========================================
-// MOSTRAR FILMES NA TELA
-// ==========================================
 
 function mostrarFilmes(lista) {
 
@@ -127,10 +119,6 @@ function mostrarFilmes(lista) {
 }
 
 
-// ==========================================
-// CREATE / UPDATE
-// FORMULÁRIO
-// ==========================================
 
 document
     .getElementById("filme-form")
@@ -171,9 +159,6 @@ document
             let resposta;
 
 
-            // ==================================
-            // UPDATE
-            // ==================================
 
             if (id) {
 
@@ -195,9 +180,6 @@ document
             }
 
 
-            // ==================================
-            // CREATE
-            // ==================================
 
             else {
 
@@ -254,10 +236,6 @@ document
     });
 
 
-// ==========================================
-// EDITAR FILME
-// ==========================================
-
 function editarFilme(id) {
 
     const filme =
@@ -310,10 +288,6 @@ function editarFilme(id) {
 }
 
 
-// ==========================================
-// CANCELAR EDIÇÃO
-// ==========================================
-
 function cancelarEdicao() {
 
     limparFormulario();
@@ -321,9 +295,6 @@ function cancelarEdicao() {
 }
 
 
-// ==========================================
-// LIMPAR FORMULÁRIO
-// ==========================================
 
 function limparFormulario() {
 
@@ -356,9 +327,6 @@ function limparFormulario() {
 }
 
 
-// ==========================================
-// DELETE - EXCLUIR FILME
-// ==========================================
 
 async function excluirFilme(id) {
 
@@ -427,10 +395,6 @@ async function excluirFilme(id) {
 }
 
 
-// ==========================================
-// PESQUISAR FILMES
-// ==========================================
-
 function filtrarFilmes() {
 
     const texto =
@@ -465,8 +429,5 @@ function filtrarFilmes() {
 }
 
 
-// ==========================================
-// INICIALIZAÇÃO
-// ==========================================
 
 carregarFilmes();
