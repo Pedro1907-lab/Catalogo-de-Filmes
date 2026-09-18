@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f0f14;
+    color: #ffffff;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.header {
+    height: 70px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #14141c;
+
+    border-bottom: 1px solid #292936;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    color: #ffca28;
+}
+
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+    min-height: 480px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0f0f14 10%,
+            rgba(15, 15, 20, 0.85) 50%,
+            rgba(15, 15, 20, 0.3)
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            #5d315e,
+            #171722 50%,
+            #0f0f14
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    background: #ffca28;
+    color: #151515;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #c6c6c6;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+.btn-principal {
+    display: inline-block;
+
+    background: #ffca28;
+    color: #151515;
+
+    text-decoration: none;
+
+    padding: 14px 25px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================
+   SEÇÕES
+========================== */
+
+.form-section,
+.catalogo {
+    padding: 80px 8%;
+}
+
+.form-section {
+    background: #15151e;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title span {
+    color: #ffca28;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+
+    margin-top: 8px;
+}
+
+
+/* ==========================
+   FORMULÁRIO
+========================== */
+
+#filme-form {
+    background: #1d1d27;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid #30303c;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+
+    color: #cccccc;
+}
+
+.form-group input,
+.form-group select,
+.pesquisa input {
+    width: 100%;
+
+    padding: 14px;
+
+    background: #111118;
+
+    color: white;
+
+    border: 1px solid #343440;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.pesquisa input:focus {
+    border-color: #ffca28;
+}
+
+.form-buttons {
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.btn-salvar,
+.btn-cancelar {
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.btn-salvar {
+    background: #ffca28;
+    color: #111;
+}
+
+.btn-cancelar {
+    background: #373743;
+    color: white;
+
+    display: none;
+}
+
+
+/* ==========================
+   PESQUISA
+========================== */
+
+.pesquisa {
+    max-width: 500px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================
+   CARDS DOS FILMES
+========================== */
+
+.filmes-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.filme-card {
+    background: #1c1c25;
+
+    border: 1px solid #2e2e39;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.filme-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #555565;
+}
+
+.poster {
+    height: 210px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #302b63,
+            #24243e
+        );
+
+    font-size: 65px;
+}
+
+.filme-info {
+    padding: 20px;
+}
+
+.filme-info h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.genero {
+    display: inline-block;
+
+    background: #30303c;
+
+    color: #dddddd;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+.detalhes {
+    color: #aaaaaa;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.nota {
+    margin-top: 15px;
+
+    font-size: 17px;
+
+    color: #ffca28;
+
+    font-weight: bold;
+}
+
+.acoes {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.btn-editar,
+.btn-excluir {
+    flex: 1;
+
+    border: none;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.btn-editar {
+    background: #34344a;
+    color: white;
+}
+
+.btn-excluir {
+    background: #6e2b35;
+    color: white;
+}
+
+.btn-editar:hover {
+    background: #44445d;
+}
+
+.btn-excluir:hover {
+    background: #893742;
+}
+
+
+/* ==========================
+   MENSAGEM VAZIA
+========================== */
+
+.sem-filmes {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 60px;
+
+    color: #888888;
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    text-align: center;
+
+    padding: 35px;
+
+    background: #0b0b10;
+
+    color: #777777;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width: 900px) {
+
+    .filmes-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .header nav {
+        gap: 10px;
+    }
+
+    .header nav a {
+        font-size: 12px;
+    }
+
+    .hero,
+    .form-section,
+    .catalogo {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filmes-grid {
+        grid-template-columns: 1fr;
+    }
+}

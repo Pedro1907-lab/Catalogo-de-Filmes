@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CineCatalog - Catálogo de Filmes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+
+        <div class="logo">
+            🎬 CineCatalog
+        </div>
+
+        <nav>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#cadastro">Cadastrar Filme</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- BANNER -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="tag">
+                    CATÁLOGO DE FILMES
+                </span>
+
+                <h1>
+                    Encontre seu próximo filme favorito.
+                </h1>
+
+                <p>
+                    Explore nosso catálogo, cadastre novos filmes,
+                    edite informações e remova títulos.
+                </p>
+
+                <a href="#catalogo" class="btn-principal">
+                    Ver catálogo
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CADASTRO -->
+
+        <section id="cadastro" class="form-section">
+
+            <div class="section-title">
+
+                <h2 id="form-titulo">
+                    Cadastrar novo filme
+                </h2>
+
+            </div>
+
+
+            <form id="filme-form">
+
+                <input
+                    type="hidden"
+                    id="filme-id"
+                >
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="titulo">
+                            Título
+                        </label>
+
+                        <input
+                            type="text"
+                            id="titulo"
+                            placeholder="Ex.: Interestelar"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="genero">
+                            Gênero
+                        </label>
+
+                        <select id="genero" required>
+
+                            <option value="">
+                                Selecione um gênero
+                            </option>
+
+                            <option value="Ação">
+                                Ação
+                            </option>
+
+                            <option value="Aventura">
+                                Aventura
+                            </option>
+
+                            <option value="Comédia">
+                                Comédia
+                            </option>
+
+                            <option value="Drama">
+                                Drama
+                            </option>
+
+                            <option value="Ficção Científica">
+                                Ficção Científica
+                            </option>
+
+                            <option value="Terror">
+                                Terror
+                            </option>
+
+                            <option value="Romance">
+                                Romance
+                            </option>
+
+                            <option value="Animação">
+                                Animação
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="ano">
+                            Ano
+                        </label>
+
+                        <input
+                            type="number"
+                            id="ano"
+                            placeholder="Ex.: 2024"
+                            min="1888"
+                            max="2100"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="diretor">
+                            Diretor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="diretor"
+                            placeholder="Ex.: Christopher Nolan"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="nota">
+                            Nota
+                        </label>
+
+                        <input
+                            type="number"
+                            id="nota"
+                            placeholder="Ex.: 8.5"
+                            min="0"
+                            max="10"
+                            step="0.1"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="btn-salvar"
+                        id="btn-salvar"
+                    >
+                        Cadastrar filme
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-cancelar"
+                        id="btn-cancelar"
+                        onclick="cancelarEdicao()"
+                    >
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- CATÁLOGO -->
+
+        <section id="catalogo" class="catalogo">
+
+            <div class="section-title">
+
+                <span>FILMES</span>
+
+                <h2>
+                    Nosso catálogo
+                </h2>
+
+            </div>
+
+
+            <!-- BARRA DE PESQUISA -->
+
+            <div class="pesquisa">
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="🔎 Pesquisar filme..."
+                    oninput="filtrarFilmes()"
+                >
+
+            </div>
+
+
+            <!-- LISTA DE FILMES -->
+
+            <div
+                id="lista-filmes"
+                class="filmes-grid"
+            >
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            🎬 CineCatalog - Projeto CRUD de Catálogo de Filmes
+        </p>
+
+        <p>
+            Desenvolvido para fins acadêmicos.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
