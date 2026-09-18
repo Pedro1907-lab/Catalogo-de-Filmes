@@ -4,13 +4,9 @@ const cors = require("cors");
 const app = express();
 const PORT = 3000;
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// ==========================================
-// ARRAY - ESTRUTURA DE ARMAZENAMENTO
-// ==========================================
 
 let filmes = [
     {
@@ -39,9 +35,6 @@ let filmes = [
     }
 ];
 
-// ==========================================
-// CREATE - CRIAR FILME
-// ==========================================
 
 function criarFilme(dados) {
     const novoId = filmes.length > 0
@@ -62,25 +55,15 @@ function criarFilme(dados) {
     return novoFilme;
 }
 
-// ==========================================
-// READ - LISTAR FILMES
-// ==========================================
 
 function listarFilmes() {
     return filmes;
 }
 
-// ==========================================
-// READ - BUSCAR FILME POR ID
-// ==========================================
-
 function buscarFilmePorId(id) {
     return filmes.find(filme => filme.id === Number(id));
 }
 
-// ==========================================
-// UPDATE - ATUALIZAR FILME
-// ==========================================
 
 function atualizarFilme(id, dados) {
     const indice = filmes.findIndex(
@@ -103,10 +86,6 @@ function atualizarFilme(id, dados) {
     return filmes[indice];
 }
 
-// ==========================================
-// DELETE - EXCLUIR FILME
-// ==========================================
-
 function excluirFilme(id) {
     const indice = filmes.findIndex(
         filme => filme.id === Number(id)
@@ -123,30 +102,17 @@ function excluirFilme(id) {
     return filmeExcluido;
 }
 
-// ==========================================
-// ROTAS DA API
-// ==========================================
-
-// Rota inicial
 app.get("/", (req, res) => {
     res.json({
         mensagem: "API do Catálogo de Filmes funcionando!"
     });
 });
 
-// ==========================================
-// GET /filmes
-// READ - Lista todos os filmes
-// ==========================================
 
 app.get("/filmes", (req, res) => {
     res.json(listarFilmes());
 });
 
-// ==========================================
-// GET /filmes/:id
-// READ - Busca um filme específico
-// ==========================================
 
 app.get("/filmes/:id", (req, res) => {
     const filme = buscarFilmePorId(req.params.id);
@@ -160,10 +126,6 @@ app.get("/filmes/:id", (req, res) => {
     res.json(filme);
 });
 
-// ==========================================
-// POST /filmes
-// CREATE - Cadastra um filme
-// ==========================================
 
 app.post("/filmes", (req, res) => {
     const { titulo, genero, ano, diretor, nota } = req.body;
@@ -182,10 +144,6 @@ app.post("/filmes", (req, res) => {
     });
 });
 
-// ==========================================
-// PUT /filmes/:id
-// UPDATE - Atualiza um filme
-// ==========================================
 
 app.put("/filmes/:id", (req, res) => {
     const { titulo, genero, ano, diretor, nota } = req.body;
@@ -213,10 +171,6 @@ app.put("/filmes/:id", (req, res) => {
     });
 });
 
-// ==========================================
-// DELETE /filmes/:id
-// DELETE - Exclui um filme
-// ==========================================
 
 app.delete("/filmes/:id", (req, res) => {
     const filmeExcluido = excluirFilme(req.params.id);
@@ -232,10 +186,6 @@ app.delete("/filmes/:id", (req, res) => {
         filme: filmeExcluido
     });
 });
-
-// ==========================================
-// INICIAR SERVIDOR
-// ==========================================
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
